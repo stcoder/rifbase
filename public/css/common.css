@@ -1,0 +1,15 @@
+.form__center {
+	margin: 0 auto;
+}
+
+.form__small {
+	width: 260px;
+}
+
+.form__small .form-group-sm {
+	margin-bottom: 12px;
+}
+
+.form__small .form__caption {
+	font-size: 23px;
+}
