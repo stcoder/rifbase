@@ -1,10 +1,17 @@
-@extends('../layouts/layout')
+@extends('../layouts/auth')
 
 @section('content')
-{{ Form::open(array('route' => 'signin', 'class' => 'form__small form__center')) }}
+{{ Form::open(array('route' => 'signin', 'class' => 'form__small box form__center')) }}
 	<div class="page-header form__caption">Авторизация</div>
-	@if (Session::has('message'))
+	@if (sizeof($errors) > 0)
 		<div class="alert alert-danger">
+			@foreach($errors->all() as $error)
+				<p>{{ $error }}</p>
+			@endforeach
+		</div>
+	@endif
+	@if (Session::has('message'))
+		<div class="alert alert-warning">
 			<p>{{ Session::get('message') }}</p>
 		</div>
 	@endif
@@ -21,6 +28,10 @@
 			<input type="checkbox" id="remember" name="remember"> Запомнить меня
 		</label>
 	</div>
-	<button type="submit" class="btn btn-primary btn-small btn-block">Войти</button>
+	<div class="form-group-sm">
+		<button type="submit" class="btn btn-primary btn-small btn-block">Войти</button>
+	</div>
+	<p><a href="#">Восстановить пароль</a></p>
+	<p>{{ link_to_route('signup', 'Зарегистрироваться') }}</p>
 {{ Form::close() }}
 @stop

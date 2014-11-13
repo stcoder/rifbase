@@ -2,19 +2,32 @@
 
 class AuthController extends BaseController {
 
+	private $__rules = array(
+		'email' => 'required|email'
+		, 'password' => 'required|alpha_num'
+	);
+
 	public function signIn() {
 		return View::make('auth/signin');
 	}
 
 	public function signInStore() {
+		$email    = Input::get('email');
+		$password = Input::get('password');
 		$remember = !!Input::get('remember');
 
-        if (Auth::attempt(array(
-        	'email' => Input::get('email')
-        	, 'password' => Input::get('password')
-        	), $remember)) {
-        	return Redirect::intended('admin');
-        }
+		$validator = Validator::make(Input::all(), $this->__rules);
+
+		if ($validator->fails()) {
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+
+		if (Auth::attempt(array(
+			'email' => $email
+			, 'password' => $password
+			), $remember)) {
+			return Redirect::intended('admin');
+		}
 
         return Redirect::back()->withInput(Input::except('password'))->with('message', 'Неизвестный пользователь');
 	}
@@ -29,12 +42,9 @@ class AuthController extends BaseController {
 	}
 
 	public function signUpStore() {
-		$rules = array(
-			'email' => 'required|email|unique:user,email'
-			, 'password' => 'required|alpha_num'
-		);
+		$this->__rules['email'] .= '|unique:user,email';
 
-		$validator = Validator::make(Input::all(), $rules);
+		$validator = Validator::make(Input::all(), $this->__rules);
 
 		if ($validator->fails()) {
 			return Redirect::back()->withInput()->withErrors($validator);
