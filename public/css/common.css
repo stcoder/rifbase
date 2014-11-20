@@ -199,7 +199,7 @@ footer
 /* 
 table
  */
-.table-striped>tbody>tr:nth-child(odd) {
+.table-striped>tbody>tr:nth-child(even) {
 	background-color: #efe5b8!important;
 }
 .table-bordered>thead>tr>th, 
@@ -210,4 +210,89 @@ table
 .table-bordered>tfoot>tr>td,
 .table-bordered {
 	border-color: #95631C;
+	vertical-align: middle;
+}
+
+.table-bordered>thead>tr>th, 
+.table-bordered>tbody>tr>th, 
+.table-bordered>tfoot>tr>th {
+	background: #dcb936;
+}
+
+.column_company {
+	width: 450px;
+}
+
+.column_type {
+	
+}
+
+.column_model {
+	
+}
+
+.column_year {
+	
+}
+
+.column_status {
+	
+}
+
+.column_price {
+	width: 120px;
+}
+
+.column_city {
+	width: 120px;
+}
+
+.column_reg {
+	width: 120px;
+}
+
+.column_reviews {
+	width: 75px;
+}
+
+.column_photo {
+	width: 117px;
+}
+
+/* 
+filter
+ */
+.filter_caption {
+	text-align: center;
+}
+
+.filter {
+	margin-bottom: 40px;
+}
+.filter .form-inline input {
+	width: 90px;
+}
+
+.filter .form-inline {
+	text-align: right;
+}
+
+.filter .filter_control {
+	width: 250px;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.filter .filter_control select {
+	width: 100%;
+}
+
+.filter_el_1,
+.filter_el_4 {
+	text-align: right;
+}
+
+.filter_el_2,
+.filter_el_5 {
+	text-align: center;
 }

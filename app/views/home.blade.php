@@ -2,6 +2,63 @@
 
 @section('content')
 	<!-- filters -->
+	<h2 class="filter_caption">Поиск техники</h2>
+	<div class="row filter">
+		<div class="col-sm-4 filter_el_1">
+			<div class="filter_control">				
+				<select>
+					<option selected>Тип техники</option>
+					<option>Б</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-4 filter_el_2">
+			<div class="filter_control">
+				<select>
+					<option selected>Статус</option>
+					<option>Свободен</option>
+					<option>Занят</option>
+					<option>Уточнить</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-4 filter_el_3">
+			<div class="filter_control">
+				<select>
+					<option selected>Город</option>
+					<option>Екатеринбург</option>
+					<option>Тюмень</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-4 filter_el_4">
+			<div class="filter_control">
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Год</label>
+						<input type="text"> - <input type="text">
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col-sm-4 filter_el_5">
+			<div class="filter_control">				
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Цена</label>
+						<input type="text"> - <input type="text">
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col-sm-4 filter_el_6">
+			<div class="filter_control">				
+				<button class="btn btn-block">Найти</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- table -->
 	<div class="table-responsive">
 		<table class="table table-bordered table-striped">
 			<thead>
@@ -48,7 +105,7 @@
 					<td>Б</td>
 					<td>Брио</td>
 					<td>2009</td>
-					<td><span class="label label-info">Узнать по телефону</span></td>
+					<td><span class="label label-info">Уточнить</span></td>
 					<td>100 000 р</td>
 					<td>Екатеринбург</td>
 					<td>01.01.14</td>
@@ -60,7 +117,7 @@
 					<td>Б</td>
 					<td>Брио</td>
 					<td>2009</td>
-					<td><span class="label label-info">Узнать по телефону</span></td>
+					<td><span class="label label-info">Уточнить</span></td>
 					<td>100 000 р</td>
 					<td>Екатеринбург</td>
 					<td>01.01.14</td>
@@ -72,7 +129,7 @@
 					<td>Б</td>
 					<td>Брио</td>
 					<td>2009</td>
-					<td><span class="label label-info">Узнать по телефону</span></td>
+					<td><span class="label label-info">Уточнить</span></td>
 					<td>100 000 р</td>
 					<td>Екатеринбург</td>
 					<td>01.01.14</td>
@@ -84,7 +141,7 @@
 					<td>Б</td>
 					<td>Брио</td>
 					<td>2009</td>
-					<td><span class="label label-info">Узнать по телефону</span></td>
+					<td><span class="label label-info">Уточнить</span></td>
 					<td>100 000 р</td>
 					<td>Екатеринбург</td>
 					<td>01.01.14</td>
@@ -96,7 +153,7 @@
 					<td>Б</td>
 					<td>Брио</td>
 					<td>2009</td>
-					<td><span class="label label-info">Узнать по телефону</span></td>
+					<td><span class="label label-info">Уточнить</span></td>
 					<td>100 000 р</td>
 					<td>Екатеринбург</td>
 					<td>01.01.14</td>
